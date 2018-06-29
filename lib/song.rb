@@ -43,7 +43,7 @@ class Song
     artist = split[1].split('.')[0].strip
     song = Song.new
     song.name = name
-    song.artist = artist
+    song.artist_name = artist
     song
   end
 
