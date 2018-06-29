@@ -33,6 +33,10 @@ class Song
     !!found ? found : self.create_by_name(name)
   end
 
+  def self.alphabetical
+    @@all.sort{|a,b| a.name <=> b.name}
+  end
+
   def save
     self.class.all << self
   end
