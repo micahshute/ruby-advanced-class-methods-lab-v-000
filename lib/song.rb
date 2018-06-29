@@ -37,6 +37,16 @@ class Song
     @@all.sort{|a,b| a.name <=> b.name}
   end
 
+  def self.new_from_filename(file)
+    split = file.split('-')
+    name =  split[0].strip
+    artist = split[1].split('.').strip
+    song = Song.new
+    song.name = name
+    song.artist = artist
+    song
+  end
+
   def save
     self.class.all << self
   end
